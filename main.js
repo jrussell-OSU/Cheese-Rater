@@ -23,8 +23,7 @@ app.use('/products', require('./products.js'));
 app.use('/users', require('./users.js'));
 app.use('/reviews', require('./reviews.js'));
 app.use('/pairings', require('./pairings.js'));
-
-
+app.use('/suggestions', require('./suggestions.js'));
 
 
 app.use(function(req,res){

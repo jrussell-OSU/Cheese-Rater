@@ -1,0 +1,53 @@
+<html>
+<h1>Cheese Suggestions</h1>
+
+<a href='/'>Back to Home</a>
+
+<h2>Add Suggestions:</h2>
+<form id="add_suggestion" action="/suggestions" method="post">
+
+    Product: <select name="product_ID">
+        {{#each products}}
+        <option value="{{product_ID}}">{{product_name}}</option>
+        {{/each}}
+    </select><br><br>
+
+    Pairing: <select name="pairing_ID">
+        {{#each pairings}}
+        <option value="{{pairing_ID}}">{{pairing_name}}</option>
+        {{/each}}
+    </select><br><br>
+
+    User: <select name="user_ID">
+        {{#each users}}
+        <option value="{{user_ID}}">{{fname}} {{lname}}</option>
+        {{/each}}
+    </select><br><br>
+
+    Comment: <input name="comment" type="text" maxlength="255"><br><br>
+
+    <input type="submit" value="Add Suggestions">
+</form><br>
+
+
+<h2>All Suggestions:</h2>
+<table>
+    <thead> 
+        <th>Product</th> 
+        <th>Pairing</th> 
+        <th>User</th>
+        <th>Date Made</th>
+        <th>Comment</th>
+    </thead> 
+    <tbody>
+        {{#each suggestions}} 
+        <tr> 
+            <td value="{{product_ID}}">{{product_name}}</td>               <td value="{{pairing_ID}}">{{pairing_name}}</td> 
+            <td value="{{user_ID}}">{{fname}} {{lname}}</td> 
+            <td>{{suggestion_date}}</td>
+            <td>{{# if comment}}{{comment}}{{else}}None{{/if}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>
