@@ -49,11 +49,10 @@ module.exports = function(){
     /*Add a Product*/
 
     router.post('/', function(req, res){
-        console.log(req.body);
+        console.log(req.body); //for debugging purposes
         var mysql = req.app.get('mysql');
         var sql = "INSERT INTO products (product_name, brand_ID,type, description) VALUES (?,?,?,?)";
         var inserts = [req.body.product_name, req.body.brand_ID, req.body.type, req.body.description];
-        console.log(inserts);
         sql = mysql.pool.query(sql,inserts,function(error, results, fields) {
             if(error){
                 console.log(JSON.stringify(error));

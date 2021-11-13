@@ -15,14 +15,11 @@ var handlebars = require('express-handlebars').create({
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static('/public'));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 app.set('mysql', mysql);
 app.use('/brands', require('./brands.js'));
 app.use('/products', require('./products.js'));
-
-app.use('/', express.static('public'));
 
 app.use(function(req,res){
   res.status(404);
