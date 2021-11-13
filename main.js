@@ -14,7 +14,8 @@ var handlebars = require('express-handlebars').create({
 
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(path.join(/nfs/stak/users/russelj2/CS340/"Cheese Rater with Git", '/public')));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 app.set('mysql', mysql);
