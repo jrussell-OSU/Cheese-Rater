@@ -1,0 +1,33 @@
+<html>
+
+<h1>Cheese Users</h1>
+<a href='/'>Back to Home</a>
+<h2>Add User:</h2>
+<form id="add_user" action="/users" method="post">
+    First Name: <input name="fname" type="text" maxlength="30"><br><br>
+    Last Name: <input name="lname" type="text" maxlength="30"><br><br>
+    Email: <input name="email" type="text" maxlength="50"><br><br>
+    Password: <input name="password" type="text" maxlength="20"><br><br>
+    <input type="submit" value="Add User">
+</form><br>
+
+<h1>Current Users:</h1>
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Email</th>
+        <th>Password</th>
+    </thead> 
+    <tbody>
+        {{#each users}} 
+        <tr> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{email}}</td> 
+            <td>{{password}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

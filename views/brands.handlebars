@@ -1,5 +1,16 @@
 <html>
-<h1>Current brands:</h1>
+
+<h1>Cheese Brands</h1>
+<a href='/'>Back to Home</a>
+<h2>Add Brand:</h2>
+<form id="add_brand" action="/brands" method="post">
+    Name: <input name="brand_name" type="text" maxlength="30"><br><br>
+    Country of Origin: <input name="country_of_origin" type="text" maxlength="2"><br><br>
+    Website: <input name="description" type="text" maxlength="50"><br><br>
+    <input type="submit" value="Add Brand">
+</form><br>
+
+<h1>Current Brands:</h1>
 <table>
     <thead> 
         <th>Brand Name</th> 

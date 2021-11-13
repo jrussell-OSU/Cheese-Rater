@@ -2,44 +2,44 @@ module.exports = function(){
     var express = require('express');
     var router = express.Router();
 
-    /*Retrieve all Brands from database*/
+    /*Retrieve all Users from database*/
 
-    function getBrands(res, mysql, context, complete){
-        mysql.pool.query("SELECT brand_name, country_of_origin, website FROM brands", function(error, results, fields){
+    function getUsers(res, mysql, context, complete){
+        mysql.pool.query("SELECT fname, lname, email, password FROM users", function(error, results, fields){
             if(error){
                 res.write(JSON.stringify(error));
                 res.end();
             }
-            context.brands = results;
+            context.users = results;
             complete();
         });
     }
 
-    /*Display all Brands*/
+    /*Display all Users*/
 
     router.get('/', function(req, res){
         var context = {};
         var mysql = req.app.get('mysql');
-        getBrands(res, mysql, context, complete);
+        getUsers(res, mysql, context, complete);
         function complete(){
-                res.render('brands', context);
+                res.render('users', context);
             }
     });
 
-    /*Add a Brand*/
+    /*Add a User*/
 
     router.post('/', function(req, res){
         console.log(req.body); //for debugging purposes
         var mysql = req.app.get('mysql');
-        var sql = "INSERT INTO brands (brand_name, country_of_origin, website) VALUES (?,?,?)";
-        var inserts = [req.body.brand_name, req.body.country_of_origin, req.body.website];
+        var sql = "INSERT INTO users (fname, lname, email, password) VALUES (?,?,?,?)";
+        var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password];
         sql = mysql.pool.query(sql,inserts,function(error, results, fields) {
             if(error){
                 console.log(JSON.stringify(error));
                 res.write(JSON.stringify(error));
                 res.end();
             }else{
-                res.redirect('/brands');
+                res.redirect('/users');
             }
         });
     });

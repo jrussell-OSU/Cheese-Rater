@@ -1,14 +1,17 @@
 <html>
 <h1>Cheese Products</h1>
+
+<a href='/'>Back to Home</a>
+
 <h2>Add Product:</h2>
 <form id="add_product" action="/products" method="post">
-    Name: <input name="product_name" type="text" maxlength="50">
+    Name: <input name="product_name" type="text" maxlength="50"><br><br>
     Brand: <select name="brand_ID">
         {{#each brands}}
         <option value="{{brand_ID}}">{{brand_name}}</option>
         {{/each}}
     </select><br><br>
-    Type: <input name="type" type="text" maxlength="20">
+    Type: <input name="type" type="text" maxlength="20"><br><br>
     Description: <input name="description" type="text" maxlength="255"><br><br>
     <input type="submit" value="Add Product">
 </form><br>
