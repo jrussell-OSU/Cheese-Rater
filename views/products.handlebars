@@ -1,0 +1,21 @@
+<html>
+<h1>All Products:</h1>
+<table>
+    <thead> 
+        <th>Product Name</th> 
+        <th>Product Type</th> 
+        <th>Brand Name</th>
+        <th>Description</th>
+    </thead> 
+    <tbody>
+        {{#each products}} 
+        <tr> 
+            <td>{{product_name}}</td> 
+            <td>{{type}}</td> 
+            <td>{{brand_name}}</td>
+            <td>{{description}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

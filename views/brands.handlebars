@@ -1,0 +1,19 @@
+<html>
+<h3>Current brands:</h3>
+<table>
+    <thead> 
+        <th>Brand Name</th> 
+        <th>Country of Origin</th> 
+        <th>Website</th>
+    </thead> 
+    <tbody>
+        {{#each brands}} 
+        <tr> 
+            <td>{{brand_name}}</td> 
+            <td>{{country_of_origin}}</td> 
+            <td>{{# if website}}{{website}}{{else}}None{{/if}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>
