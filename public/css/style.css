@@ -1,6 +1,5 @@
 th, td {
     text-align: center;
-    /*border: 1px solid black;*/
     border-left: .5px dashed green;  
     font-family: Arial, Arial, Helvetica, sans-serif;
 }

@@ -1,0 +1,59 @@
+<html>
+<h1>Cheese Reviews</h1>
+
+<a href='/'>Back to Home</a>
+
+<h2>Add Review:</h2>
+<form id="add_review" action="/reviews" method="post">
+
+    User: <select name="user_ID">
+        {{#each users}}
+        <option value="{{user_ID}}">{{fname}} {{lname}}</option>
+        {{/each}}
+    </select><br><br>
+
+    Product: <select name="product_ID">
+        {{#each products}}
+        <option value="{{product_ID}}">{{product_ID}} {{product_name}}</option>
+        {{/each}}
+    </select><br><br>
+
+    Rating: <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select><br><br>    
+
+    Comment: <input name="comment" type="text" maxlength="255"><br><br>
+
+    <input type="submit" value="Add Review">
+</form><br>
+
+
+<h2>All Reviews:</h2>
+<table>
+    <thead> 
+        <th>User</th> 
+        <th>Product</th> 
+        <th>Rating</th>
+        <th>Comment</th>
+    </thead> 
+    <tbody>
+        {{#each reviews}} 
+        <tr> 
+            <td value="{{user_ID}}">{{fname}} {{lname}}</td> 
+            <td value="{{product_ID}}">{{product_name}}</td>             
+            <td>{{rating}}</td>
+            <td>{{# if comment}}{{comment}}{{else}}None{{/if}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>
