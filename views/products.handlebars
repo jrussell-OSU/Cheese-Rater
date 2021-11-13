@@ -1,5 +1,20 @@
 <html>
-<h1>All Products:</h1>
+<h1>Cheese Products</h1>
+<h2>Add Product:</h2>
+<form id="add_product" action="/products" method="post">
+    Name: <input name="product_name" type="text" maxlength="50">
+    Brand: <select name="brand_ID">
+        {{#each brands}}
+        <option value="{{brand_ID}}">{{brand_name}}</option>
+        {{/each}}
+    </select><br><br>
+    Type: <input name="type" type="text" maxlength="20">
+    Description: <input name="description" type="text" maxlength="255"><br><br>
+    <input type="submit" value="Add Product">
+</form><br>
+
+
+<h2>All Products:</h2>
 <table>
     <thead> 
         <th>Product Name</th> 
