@@ -1,0 +1,33 @@
+<html>
+<h1>Cheese Pairings</h1>
+
+<a href='/'>Back to Home</a>
+
+<h2>Add Pairing:</h2>
+<form id="add_pairing" action="/pairings" method="post">
+    Name: <input name="pairing_name" type="text" maxlength="50"><br><br>
+    Brand: <select name="brand_ID">
+        {{#each brands}}
+        <option value="{{brand_ID}}">{{brand_name}}</option>
+        {{/each}}
+    </select><br><br>
+    <input type="submit" value="Add Pairing">
+</form><br>
+
+
+<h2>All Pairings:</h2>
+<table>
+    <thead> 
+        <th>Pairing Name</th> 
+        <th>Brand</th> 
+    </thead> 
+    <tbody>
+        {{#each pairings}} 
+        <tr> 
+            <td>{{pairing_name}}</td> 
+            <td>{{brand_name}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

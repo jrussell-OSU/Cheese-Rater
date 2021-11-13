@@ -22,6 +22,8 @@ app.use('/brands', require('./brands.js'));
 app.use('/products', require('./products.js'));
 app.use('/users', require('./users.js'));
 app.use('/reviews', require('./reviews.js'));
+app.use('/pairings', require('./pairings.js'));
+
 
 
 

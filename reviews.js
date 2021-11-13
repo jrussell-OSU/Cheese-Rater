@@ -41,6 +41,8 @@ module.exports = function(){
         });
     }
 
+    /*Displays all Reviews with user names and product names*/
+
     router.get('/', function(req, res){
         var callbackCount = 0;
         var context = {};
@@ -53,7 +55,6 @@ module.exports = function(){
             if(callbackCount >= 3){
                 res.render('reviews', context);
             }
-
         }
     });
 
